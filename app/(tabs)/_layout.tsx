@@ -1,45 +1,44 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { FontAwesome } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    return (
+        <Tabs screenOptions={{
+            tabBarActiveTintColor: 'rgb(165, 180, 252)',
+            tabBarInactiveTintColor: 'rgb(110, 126, 150)',
+            tabBarActiveBackgroundColor: 'rgb(55, 70, 90)',
+            headerTintColor: '#fff',
+            headerTitleAlign: 'center',
+            headerStyle: {
+                backgroundColor: 'rgb(35, 45, 62)',
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+            },
+            tabBarStyle: {
+                backgroundColor: 'rgb(35, 45, 62)',
+            }
+        }}>
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: "Balance",
+                    tabBarIcon: ({ color }) => <FontAwesome size={20} name="dollar" color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="budget"
+                options={{
+                    title: "Budget",
+                    tabBarIcon: ({ color }) => <FontAwesome size={20} name="tachometer" color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="analytics"
+                options={{
+                    title: "Analytics",
+                    tabBarIcon: ({ color }) => <FontAwesome size={20} name="bar-chart" color={color} />,
+                }}
+            />
+            <Tabs.Screen name="+not-found" options={{}} />
+        </Tabs >
+    )
 }

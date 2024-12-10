@@ -1,50 +1,69 @@
-# Welcome to your Expo app 👋
+# EZBudget
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+EZBudget is a simple and easy-to-use personal budgeting app. It helps you manage your finances efficiently and effectively.
 
-## Get started
+## Technologies Used
 
-1. Install dependencies
+- **Expo React-Native**: For building the mobile application.
+- **Nativewind**: For styling the application.
+- **SQLite**: For local database management.
+
+## Features
+
+- Track your income and expenses
+- Categorize your transactions
+- View detailed reports and summaries
+- Set and manage budgets
+
+## Installation and Setup
+
+Follow these steps to launch the app on your device:
+
+### Prerequisites
+
+- Node.js installed on your machine
+- Expo CLI installed globally (`npm install -g expo-cli`)
+- An Android or iOS device/emulator
+
+### Steps
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/EZBudget.git
+   cd EZBudget
+   ```
+
+2. **Install dependencies:**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. **Start the Expo server:**
 
    ```bash
-    npx expo start
+   expo start
    ```
 
-In the output, you'll find options to open the app in a
+4. **Run the app on your device:**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - **For Android:**
+     - Download the Expo Go app from the Google Play Store.
+     - Scan the QR code displayed in the terminal or Expo DevTools.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   - **For iOS:**
+     - Download the Expo Go app from the Apple App Store.
+     - Scan the QR code displayed in the terminal or Expo DevTools.
 
-## Get a fresh project
+## Contributing
 
-When you're ready, run:
+Contributions are welcome! Please fork the repository and submit a pull request.
 
-```bash
-npm run reset-project
-```
+## License
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This project is licensed under the MIT License.
 
-## Learn more
+---
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Spend Wisely with EZBudget!
