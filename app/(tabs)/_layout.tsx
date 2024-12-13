@@ -11,7 +11,6 @@ export default function TabLayout() {
             headerTitleAlign: 'center',
             headerStyle: {
                 backgroundColor: 'rgb(35, 45, 62)',
-
             },
             tabBarStyle: {
                 backgroundColor: 'rgb(35, 45, 62)',
