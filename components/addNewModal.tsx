@@ -1,14 +1,17 @@
 import { Modal, TextInput, Text, TouchableOpacity, View, SafeAreaView, StyleSheet } from "react-native";
 import DateTimePicker from '@react-native-community/datetimepicker';
-import { useState } from "react";
+import { useState } from 'react';
+import moment from 'moment-timezone';
+import { FontAwesome } from "@expo/vector-icons";
 
 export default function AddNewModal(props: any) {
-    const [date, setDate] = useState(new Date());
-    const [_date, _setDate] = useState("Pick Date");
+    let today = new Date();
+    const [date, setDate] = useState(today);
+    const [_date, _setDate] = useState(today);
     const [show, setShow] = useState(false);
 
     const onChange = (event: any, selectedDate: any) => {
-        _setDate(selectedDate.toISOString());
+        _setDate(selectedDate);
         setShow(false);
     };
     return (
@@ -27,9 +30,10 @@ export default function AddNewModal(props: any) {
                             <Text style={styles.label}>Date:</Text>
                             {/* <TextInput style={styles.input} placeholderTextColor="#bababa" placeholder="Date" /> */}
                             <TouchableOpacity
-                                style={styles.input}
+                                style={styles.dateInput}
                                 onPress={() => { setShow(true) }}>
-                                <Text style={{ color: "#bababa" }}>{_date}</Text>
+                                <Text style={{ color: "#bababa" }}>{moment(_date).format("DD MMMM, YYYY")}</Text>
+                                <FontAwesome name="calendar" size={16} color="#bababa" style={{ marginRight: 10 }} />
                             </TouchableOpacity>
                             {show && (
                                 <DateTimePicker
@@ -98,18 +102,30 @@ const styles = StyleSheet.create({
     },
     label: {
         color: "white",
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: "light",
         marginBottom: 2,
     },
     input: {
         borderWidth: 1,
-        backgroundColor: "rgba(255,255,255,0.16)",
+        backgroundColor: "rgba(255,255,255,0.05)",
         width: "100%",
-        borderColor: "#ccc",
+        borderColor: "#4a4a4a",
         padding: 10,
         borderRadius: 5,
         color: "white",
+        //flex: 1,
+    },
+    dateInput: {
+        borderWidth: 1,
+        backgroundColor: "rgba(255,255,255,0.05)",
+        width: "100%",
+        borderColor: "#4a4a4a",
+        padding: 10,
+        borderRadius: 5,
+        color: "white",
+        flexDirection: "row",
+        justifyContent: "space-between",
         //flex: 1,
     },
     saveButton: {
@@ -124,12 +140,12 @@ const styles = StyleSheet.create({
     saveButtonText: {
         color: "white",
         fontSize: 18,
-        fontWeight: "bold",
+        fontWeight: "normal",
     },
     cancelButtonText: {
-        color: "#ffa6d1",
+        color: "#ff8a82",
         fontSize: 18,
-        fontWeight: "bold",
+        fontWeight: "normal",
     },
     shadow: {
         shadowColor: "#000",
