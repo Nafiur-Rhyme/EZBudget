@@ -1,4 +1,4 @@
-import AddNewModal from "@/components/addNewModal";
+import AddNewBalanceModal from "@/components/addNewBalanceModal";
 import { loadAllBalances, loadAllBudgets } from "@/models/loads";
 import { useSQLiteContext } from "expo-sqlite";
 import { useEffect, useState } from "react";
@@ -54,9 +54,9 @@ export default function Index() {
           className="bg-blue-700 p-4 my-2 w-1/2 items-center rounded-md"
           onPress={() => { setModalVisible(true) }}
         >
-          <Text className="text-white text-xl">+ Add new</Text>
+          <Text className="text-white text-xl">+ Add New Balance</Text>
         </TouchableOpacity>
-        <AddNewModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
+        <AddNewBalanceModal modalVisible={modalVisible} setModalVisible={setModalVisible} />
 
         {/* Showing Balance Data */}
         {balanaceData.map((balance, index) => (
