@@ -4,7 +4,7 @@ import { useState } from 'react';
 import moment from 'moment-timezone';
 import { FontAwesome } from "@expo/vector-icons";
 
-export default function AddNewModal(props: any) {
+export default function AddNewBalanceModal(props: any) {
     let today = new Date();
     const [date, setDate] = useState(today);
     const [_date, _setDate] = useState(today);
@@ -66,7 +66,7 @@ export default function AddNewModal(props: any) {
                                 <Text style={styles.saveButtonText}>Save</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
-                                style={[styles.shadow, styles.saveButton]}
+                                style={[styles.shadow, styles.cancelButton]}
                                 onPress={() => { props.setModalVisible(false); }}>
                                 <Text style={styles.cancelButtonText}>Cancel</Text>
                             </TouchableOpacity>
@@ -132,10 +132,18 @@ const styles = StyleSheet.create({
         backgroundColor: "#1D4ED8",
         padding: 10,
         marginVertical: 8,
-        width: "50%",
+        width: "45%",
         alignItems: "center",
         borderRadius: 8,
         marginRight: 10,
+    },
+    cancelButton: {
+        backgroundColor: "#D14343",
+        padding: 10,
+        marginVertical: 8,
+        width: "45%",
+        alignItems: "center",
+        borderRadius: 8,
     },
     saveButtonText: {
         color: "white",
@@ -143,7 +151,7 @@ const styles = StyleSheet.create({
         fontWeight: "normal",
     },
     cancelButtonText: {
-        color: "#ff8a82",
+        color: "white",
         fontSize: 18,
         fontWeight: "normal",
     },
